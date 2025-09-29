@@ -7,21 +7,19 @@
     
 
     <script>
-        // Program cek jumlah hari dalam bulan
+        let saldo = 1000000; // saldo awal Rp. 1.000.000
 
-let bulan = prompt("Masukkan nama bulan (contoh: Januari, Februari, Maret, dst):");
+let jenis = prompt("Ketik 'tarik' untuk tarik tunai atau 'setor' untuk setor tunai:");
+let jumlah = parseInt(prompt("Masukkan jumlah uang:"));
 
-bulan = bulan.toLowerCase(); // supaya input tidak peka huruf besar/kecil
-
-if (bulan === "febuari" || bulan === "maret" || bulan === "mei" || bulan === "juli" || bulan === "oktober" || bulan ===
-"desember") {
-  console.log("Bulan ini memiliki 31 hari");
-} else if (bulan === "februari" || bulan === "februari") {
-  console.log("Bulan ini memiliki 28 atau 29 hari");
-} else if (bulan === "april" || bulan === "juni" || bulan === "september" || bulan === "november") {
-  console.log("Bulan ini memiliki 30 hari");
+if (jenis === "tarik") {
+  saldo = saldo - jumlah;
+  alert("Saldo awal: Rp.1000000\nTarik tunai: -Rp." + jumlah + "\nSaldo akhir: Rp." + saldo);
+} else if (jenis === "setor") {
+  saldo = saldo + jumlah;
+  alert("Saldo awal: Rp.1000000\nSetor tunai: +Rp." + jumlah + "\nSaldo akhir: Rp." + saldo);
 } else {
-  console.log("Nama bulan tidak valid!");
+  alert("Jenis transaksi tidak dikenal.");
 }
     </script>
 </body>
